@@ -2,7 +2,7 @@
 /**
 *main-prints the alphabet at reverse
 *
-*Return:Always 0(Succesful)
+*Return:Always 0 (Succesful)
 */
 int main(void)
 {
@@ -13,3 +13,4 @@ putchar(c);
 }
 putchar('\n');
 return (0);
+}
