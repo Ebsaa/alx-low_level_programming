@@ -1,16 +1,47 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
-* main - prints  and compute the sum of all the multiples of
-* 3 or 5 below 1024.
+* print_times_table - prints the times table for num.
+* @n: The multiplication table requested.
 * Return: Nothing.
 */
-int main(void)
+void print_times_table(int n)
 {
-int a, res;
-for (a = 0; a < 1024; a++)
-if (a % 3 == 0 || a % 5 == 0)
-res += a;
-printf("%d\n", res);
-return (0);
+int i, j, res;
+if (!(n > 15 || n < 0))
+{
+for (i = 0; i <= n; i++)
+{
+for (j = 0; j <= n; j++)
+{
+res = (i * j);
+if (j != 0)
+{
+_putchar(',');
+_putchar(' ');
+}
+if (res < 10 && j != 0)
+{
+_putchar(' ');
+_putchar(' ');
+_putchar((res % 10) + '0');
+}
+else if (res >= 10 && res < 100)
+{
+_putchar(' ');
+_putchar((res / 10) + '0');
+_putchar((res % 10) + '0');
+}
+else if (res >= 100 && j != 0)
+{
+_putchar((res / 100) + '0');
+_putchar((res / 10) % 10 + '0');
+_putchar((res % 10) + '0');
+}
+else
+_putchar((res % 10) + '0');
+}
+_putchar('\n');
+}
+}
 }
