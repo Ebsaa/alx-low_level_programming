@@ -10,8 +10,10 @@ void print_number(int a)
 unsigned int a1;
 
 if (a < 0)
+{
 a1 = -a;
 _putchar('-');
+}
 else
 {
 a1 = a;
