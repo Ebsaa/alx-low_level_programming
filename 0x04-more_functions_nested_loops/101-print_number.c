@@ -2,23 +2,23 @@
 
 /**
 * print_number - prints an integer
-* @n: num to be printed
+* @a: num to be printed
 */
 
-void print_number(int n)
+void print_number(int a)
 {
-unsigned int x1;
+unsigned int a1;
 
-if (n < 0)
-x1 = -n;
+if (a < 0)
+a1 = -a;
 _putchar('-');
 else
 {
-x1 = n;
+a1 = a;
 }
-if (x1 / 10)
+if (a1 / 10)
 {
-print_number(x1 / 10);
+print_number(a1 / 10);
 }
-_putchar((x1 % 10) + '0');
+_putchar((a1 % 10) + '0');
 }
