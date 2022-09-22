@@ -35,5 +35,6 @@ break;
 }
 else
 a++;
+}
 return (diff);
 }
