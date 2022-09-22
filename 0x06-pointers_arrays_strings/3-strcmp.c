@@ -34,6 +34,6 @@ diff = s1[a] - s2[a];
 break;
 }
 else
-i++;
+a++;
 return (diff);
 }
