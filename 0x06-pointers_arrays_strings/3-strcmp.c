@@ -5,9 +5,9 @@
 * @s1: 1st string
 * @s2: 2nd string
 * Return:
-* return 0 if s1 == s2
-* return -ve if s1 < s2
-* return +ve if s1 > s2
+* return zero if s1 == s2
+* return negative if s1 < s2
+* return positive if s1 > s2
 */
 
 int _strcmp(char *s1, char *s2)
