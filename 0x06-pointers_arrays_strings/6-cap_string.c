@@ -2,45 +2,49 @@
 
 /**
 * cap_string - capitalized all words of string
-* @s: capitalize string
+* @str: capitalize string
 * Return: return address of s
 */
-char *cap_string(char *s)
+char *cap_string(char *str)
 
 {
-int i = 0, j;
+int i = 0, j, k;
 
-char a[] = " \t\n,;.!?\"() {}";
+char delimiters[] = " \t\n,;.!?\"(){}";
 
-while (*(s + i))
-
+for (; str[i]; i++)
 {
 
-	if (*(s + i) >= 'a' && *(s + i) <= 'z')
-
+	if (i == 0 && (str[i] >= 'a' && str[i] <= 'z'))
 	{
-
-		if (i == 0)
-
-			*(s + i) -= 'a' - 'A';
-
-		else
+		str[i] -= 32;
+	}
+	j = 0;
+for (; delimiters[j]; j++)
+	{
+	if (str[i] == delimiters[j])
+		{
+			i++;
+for (k = 0; delimiters[k]; k++)
 
 		{
+	if (str[i] == delimiters[k])
 
-			for (j = 0; j <= 12; j++)
+				{
 
-			{
+				i++;
 
-				if (a[j] == *(s + i - 1))
-
-					*(s + i) -= 'a' - 'A';
-
-			}
+				}
 
 		}
+
+	if (str[i] >= 'a' && str[i] <= 'z')
+
+			{
+		str[i] -= 32;
+			}
+		}
 	}
-	i++;
 }
-return (s);
+return (str);
 }
