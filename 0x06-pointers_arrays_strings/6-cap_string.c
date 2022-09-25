@@ -8,7 +8,7 @@
 char *cap_string(char *str)
 
 {
-char i, j, k;
+int i, j, k;
 
 char delimiters[] = " \t\n,;.!?\"(){}";
 for (; str[i]; i++)
