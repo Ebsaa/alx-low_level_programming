@@ -16,7 +16,7 @@ int a, b, c, flag;
 		flag = 0;
 		for (b = 0; accept[b] != '\0'; b++)
 		{
-			if (s[a] == accept[n])
+			if (s[a] == accept[b])
 			{
 				c++;
 				flag = 1;
