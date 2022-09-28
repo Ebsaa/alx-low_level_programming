@@ -9,9 +9,9 @@
 int sqrt_check(int s, int c)
 {
 if (s * s == c)
-	return (s);
-	if (s * s > c)
-	return (-1);
+return (s);
+if (s * s > c)
+return (-1);
 return (sqrt_check(s + 1, c));
 }
 
@@ -23,8 +23,8 @@ return (sqrt_check(s + 1, c));
 int _sqrt_recursion(int n)
 {
 if (n < 0)
-	return (-1);
-	if (n == 0 || n == 1)
-	return (n);
+return (-1);
+if (n == 0 || n == 1)
+return (n);
 return (sqrt_check(1, n));
 }
