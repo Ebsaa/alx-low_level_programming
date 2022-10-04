@@ -11,25 +11,41 @@
 */
 char *argstostr(int ac, char **av)
 {
-char *str;
-int arg, byte, index, size = ac;
-	if (ac == 0 || av == NULL)
-		return (NULL);
-	for (arg = 0; arg < ac; arg++)
-	{
-	for (byte = 0; av[arg][byte]; byte++)
-		size++;
-	}
-	str = malloc(sizeof(char) * size + 1);
-	if (str == NULL)
+int i, j, k, size;
+char *arg;
+size = 0;
+k = 0;
+if (ac == 0 || av == NULL)
 	return (NULL);
-	index = 0;
-	for (arg = 0; arg < ac; arg++)
+i = 0;
+while (i < ac)
+{
+	j = 0;
+	while (av[i][j])
 	{
-	for (byte = 0; av[arg][byte]; byte++)
-		str[index++] = av[arg][byte];
-		str[index++] = '\n';
+		size++;
+		j++;
 	}
-	str[size] = '\0';
-	return (str);
+	size++;
+	i++;
+}
+arg = malloc((sizeof(char) * size)+1);
+if (arg == NULL)
+	return (NULL);
+	i = 0;
+	while (i < ac)
+	{
+	j = 0;
+	while (av[i][j])
+		{
+		arg[k] = (av[i][j]);
+		j++;
+		k++;
+		}
+	arg[k] = '\n';
+	k++;
+	i++;
+	}
+arg[k] = '\0';
+return (arg);
 }
