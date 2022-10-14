@@ -18,33 +18,33 @@ va_start(args, format);
 len = strlen(format);
 	if (format)
 	{
-		while (format[i] && i < len)
+	while (format[i] && i < len)
+	{
+		switch (format[i])
 		{
-			switch (format[i])
-			{
-				case 'c':
-					printf("%s%c",  delimiter, va_arg(args, int));
-					break;
-				case 'i':
-					printf("%s%d", delimiter, va_arg(args, int));
-					break;
-				case 'f':
-					printf("%s%f", delimiter, va_arg(args, double));
-					break;
-				case 's':
-					string =  va_arg(args, char *);
-					if (!string)
-						printf("(nil)");
-					printf("%s%s", delimiter, string);
-					break;
-				default:
-					i++;
-					continue;
-			}
-			delimiter = ", ";
-			i++;
+			case 'c':
+				printf("%s%c",  delimiter, va_arg(args, int));
+				break;
+			case 'i':
+				printf("%s%d", delimiter, va_arg(args, int));
+				break;
+			case 'f':
+				printf("%s%f", delimiter, va_arg(args, double));
+				break;
+			case 's':
+				string =  va_arg(args, char *);
+				if (!string)
+					printf("(nil)");
+				printf("%s%s", delimiter, string);
+				break;
+			default:
+				i++;
+				continue;
 		}
+		delimiter = ", ";
+		i++;
 	}
-	printf("\n");
-	va_end(args);
+}
+printf("\n");
+va_end(args);
 }
