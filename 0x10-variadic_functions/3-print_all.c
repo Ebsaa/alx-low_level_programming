@@ -20,23 +20,23 @@ if (format)
 {
 while (format[i] && i < len)
 {
-	switch (format[i])
+switch (format[i])
 {
 case 'c':
-	printf("%s%c",  delimiter, va_arg(args, int));
-	break;
+printf("%s%c",  delimiter, va_arg(args, int));
+break;
 case 'i':
-	printf("%s%d", delimiter, va_arg(args, int));
-	break;
+printf("%s%d", delimiter, va_arg(args, int));
+break;
 case 'f':
-	printf("%s%f", delimiter, va_arg(args, double));
-	break;
+printf("%s%f", delimiter, va_arg(args, double));
+break;
 case 's':
-	string =  va_arg(args, char *);
-	if (!string)
-		printf("(nil)");
-	printf("%s%s", delimiter, string);
-	break;
+string =  va_arg(args, char *);
+if (!string)
+	printf("(nil)");
+printf("%s%s", delimiter, string);
+break;
 default:
 i++;
 continue;
